@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request for Organizing Blood Donation Camp</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            background-color: #f2dede;
+            padding: 20px;
+            width: 250px;
+        }
+        .content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        form {
+            max-width: 600px;
+        }
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        form input[type="radio"] {
+            width: auto;
+        }
+        form input[type="submit"] {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>REQUEST FOR ORGANIZING DONATION CAMP</h1>
+            <p>For further queries call us at +91 84381 17425</p>
+            <form action="#" method="POST">
+                <label for="organization">Name of Organization/Camp *</label>
+                <input type="text" id="organization" name="organization" required>
+                
+                <label for="date">When would you like to organize a camp? *</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="address">Address *</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="address2">Address 2</label>
+                <input type="text" id="address2" name="address2">
+                
+                <label for="city">City/Town *</label>
+                <input type="text" id="city" name="city" required>
+                
+                <label for="state">State/Province *</label>
+                <input type="text" id="state" name="state" required>
+                
+                <label for="zip">Zip/Postal Code *</label>
+                <input type="text" id="zip" name="zip" required>
+                
+                <label for="donors">Number of expected donors *</label>
+                <input type="number" id="donors" name="donors" required>
+                
+                <label for="arrangement">Kind of camp arrangement *</label>
+                <input type="radio" id="mobile" name="arrangement" value="Mobile Bus" required> Mobile Bus
+                <input type="radio" id="venue" name="arrangement" value="Venue" required> Venue
+                
+                <label for="name">Your name *</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="contact">Your contact number *</label>
+                <input type="tel" id="contact" name="contact" required>
+                
+                <label for="email">Your Email address *</label>
+                <input type="email" id="email" name="email" required>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

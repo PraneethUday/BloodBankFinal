@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        ul {
+            padding: 20px;
+        }
+
+        header {
+            margin: 20px;
+        }
+
+        li {
+            list-style: none;
+        }
+        a{
+            font-family: F1;
+        }
+        .nav {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-family: F1;
+            transition: all 0.3s;
+
+        }
+
+        nav {
+            height: 100px;
+            margin: 20px;
+        }
+
+        .btn_nav {
+            font-family: F1;
+            font-size: 20px;
+            font-weight: 300;
+            border-radius: 2in;
+            border: 5px solid rgb(228, 87, 99);
+            background-color: rgb(242, 185, 185);
+            color: rgb(235, 91, 91);
+            padding: 8px 8px 8px 8px;
+            transition: all 0.3s;
+        }
+
+        .btn_nav:hover {
+            transform: translateY(-8px);
+            background-color: red;
+            color: white;
+        }
+
+        a:hover {
+            color: rgb(44, 35, 35);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            padding-left: 10px;
+            border: 4px solid black;
+            border-radius: 10px;
+            background-color: crimson;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .nav_link {
+            list-style: none;
+        }
+
+        .nav_link li {
+            display: inline-block;
+            padding-right: 10px;
+        }
+
+        .header {
+            background-color: crimson;
+        }
+
+        @keyframes SlideInLeft {
+            0% {
+                transform: translateX(-300px);
+            }
+
+            40% {
+                transform: translateX(300px);
+            }
+
+            80% {
+                transform: translateX(-300px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+
+        }
+
+        .intro {
+            animation-name: SlideInLeft;
+            animation-duration: 10s;
+            color: rgb(103, 9, 9);
+
+        }
+
+        .album {
+            transition: all 0.3s;
+        }
+
+        .album:hover {
+            transform: translateY(-10px);
+            opacity: 80%;
+        }
+
+        .container2 {
+            background-color: crimson;
+            border: 4px solid black;
+            margin: 20px;
+            border-radius: 8px;
+            text-align: justify;
+        }
+
+        .p {
+            text-align: left;
+            margin-left: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .list {
+            
+            text-align: left;
+            margin-left: 10px;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+
+        body {
+            background-color: rgb(228, 87, 99);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        @font-face {
+    font-family: F1;
+    src: url(static_copy/MODERNA_.TTF);
+
+}
+
+        header{
+            font-family: F1 ; 
+        }
+    </style>
+</head>
+
+<body>
+    <head>
+        <link rel="stylesheet" href="/Blood Bank/css_script/animation.css">
+        <link rel="stylesheet" href="/Blood Bank/css_script/style.css">
+        <link rel="stylesheet" href="/Blood Bank/css_script/navbar.css">
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Blood Bank</title>
+        
+    </head>
+    
+    <body>
+        <header>
+            <a href="#" class="nav"><h1>Things to Know  </h1></a>
+            <nav>
+                <ul class="nav_link">
+                    <li><a href="Main.html" class="nav">Home</a></li>
+                    <li><a href="About.html" class="nav">About</a></li>
+                    <li><a href="contact.html" class="nav">Contact</a></li>
+                    <li><a href="#" class="nav">information</a></li>
+                    <li><a href="bloo/BB/imagegallery2.html" class="nav">Photo Gallery</a></li>
+                    <li><a href="/Blood Bank/Login.html"><button class="btn_nav" style="padding-right: 15px;">LOGIN</button></li></a>
+                    <li><a href="/Blood Bank/Signin.html"><button class="btn_nav">SIGN IN</button></li></a>
+                </ul>
+            </nav>
+        </header>
+    <center>
+        <h1 class="intro">THINGS TO KNOW</h1>
+    </center>
+    <br>
+    <br>
+    <div class="container2" style="width: 97%;">
+        <br>
+        <div>
+            <h1 style="text-decoration: underline;text-align: center;">
+                KNOW THIS TO DONATE BLOOD
+            </h1>
+            <div>
+                <h2 class="list">
+                    AGE
+                </h2>
+                <p class="p">
+                    If you are 16 or 17 years of age, written permission is required from a parent or guardian prior to donating. You can find the form at www.crbs.net.
+                </p>
+                <h2 class="list">
+                    WEIGHT
+                </h2>
+                <p class="p">
+                    You must weigh at least 110 pounds to donate blood.
+                </p>
+                <h2 class="list">
+                       Blood Pressure
+                </h2>
+                <p class="p">
+                    Donors are acceptable if they have a blood pressure between 180/100 and 90/50; some blood pressure exceptions can be made depending on the cause. Most high blood pressure medications are acceptable.
+                </p>
+                <h2 class="list">
+                    FREQUENCY OF DONATION
+                </h2>
+                <p class="p">
+                    Whole blood can be donated every 56 days. Platelets can be donated every seven days; however, you may only donate maximum of 24 times in a rolling 12-month period. We normally ask platelet donors to donate only every 14 days, unless an extraordinary situation exists. Plasma can be donated every 28 days.
+                </p>
+                <h2 class="list">
+                   DONATION PREPARATION
+                </h2>
+                <p class="p">
+                    It is important to eat a substantial meal and drink plenty of water or juice before donating. Avoid beverages with caffeine or alcohol before donating. It is also important to be well rested.
+                </p>
+                <h2 class="list">
+                    TRAVEL
+                </h2>
+                <p class="p">
+                    Travel to tourist areas in most parts of the world is world is acceptable. You may be deferred for one year if you have traveled to a malarial area. Ask a Donor Specialist to get the most recent information.
+                </p>
+                <h2 class="list">
+                    DENTAL WORK
+                </h2>
+                <p class="p">
+                    You must wait three days after the following procedures: root canal, tooth extractions and periodontal procedures. There is no waiting period for cleanings or fillings.
+                </p>
+                <h2 class="list">
+                    IMMUNIZATIONS
+                </h2>
+                <p class="p">
+                    There is no deferral period after a flu shot if you are symptom-free. However, other immunizations may have a two to week deferral period.
+                </p>
+                <h2 class="list">
+                   Pregnancy
+                </h2>
+                <p class="p">
+                    Doantion may take 5 to 8 weeks after pregnancy,but not during the pregnancy
+                </p>
+                <h2 class="list">
+                    HEART DISEASE CARDIOVASCULAR ACCIDENTS CVA
+                </h2>
+                <p class="p">
+                    If symptom-free for at least six months, some donors with heart disease, recent heart surgery, heart attacks, or CVA's are eligible to donate. This is evaluated case-by-case basis.
+                </p>
+                <h2 class="list">
+                    CANCER
+                </h2>
+                <p class="p">
+                    People who have been successfully treated for some types of cancer are eligible to donate. Chemotherapy and radiation treatments are no longer reasons for permanent deferral.
+                </p>
+                <h2 class="list">
+                    DIABETIC
+                </h2>
+                <p class="p">
+                    If you have ever had a positive test for HIV, the AIDS virus, you may not donate blood. If you have had syphilis, gonorrhea, chlamydia or any sexually-transmitted disease, you must wait one year after successful treatment to donate blood. Donors with genital herpes are eligible two weeks after the symptoms have subsided. You may not donate blood if you have had hepatitis after age 10.
+                </p>
+                <h2 class="list">
+                  ANTIBODIES
+                </h2>
+                <p class="p">
+                    You must be off antibiotics for 48 hours before donating blood. Antibiotics taken in low dosages for preventative treatment or acne may be okay.
+                </p>
+                <h2 class="list">
+                  OTHER MEDICATIONS.
+                </h2>
+                <p class="p">
+                    Hormones, antidepressants, cholesterol, some blood pressure medications, and other prescription medications are acceptable, as long as you are feeling well.
+                </p>
+                <h3 class="list">
+                    Who can donate blood
+                </h3>
+                <p class="p">
+                    The age of the donor must be above 18 years and below 65 years of age. He/she must have a
+                    haemoglobin count that is not less than 12.5 g/dl. The Weigh should not less than 45 kgs. One should
+                    have a normal body temperature at the time of donation.
+                    <br>
+                    <br>
+                    You should always drink lots of water before the donation. Also, keep in mind that you should take a
+                    well-balanced meal prior to and after donating blood. This will keep you healthy and fit.
+                    <br>
+                    <br>
+                    Transfusion of blood is an essential part of modern health care management. The first Blood Centre
+                    was started in India by Indian Red Cross Society (IRCS) in 1942 at All India Institute of Hygiene &
+                    Public Health, Calcutta (West Bengal).
+                    In 1977, the Blood Centre started operating from the Indian Red Cross Society, National Headquarters
+                    (IRCS, NHQ). The Blood Centre is running round the clock and provides the services to the needy
+                    patients. It was designated as Regional Blood Centre by State Govt. in 1996 and has been designated
+                    as Model Blood Centre in 2010 by National AIDS Control Organization, Ministry of Health and Family
+                    Welfare, Govt of India and is also certified by the BIS for ISO 9001:2008 and accredited by NABH &
+                    NABL.
+                    <br>
+                    <br>
+                    The NHQ Blood Centre focuses on encouraging voluntary blood donation. It collects approximately
+                    30000 units of blood annually . The percentage of voluntary blood collection is 100% in IRCS and
+                    there is 100% component separation of blood units collected. The Blood Centre provides 90% of total
+                    collection of blood free of service charges to the patients admitted in the General Ward of Govt.
+                    Hospitals in Delhi as well as to around 1000 Thalassaemic patients registered with it.
+                    <br>
+                    <br>
+                    The IRCS (NHQ) Blood Centre is fully equipped to collect blood at its premises and also has mobile
+                    teams, which go out frequently to hold Blood Donation Camps. The blood collected is tested for HIV I
+                    & II, HBs Ag, HCV, VDRL & Malaria. Blood grouping with Rh D and Antibodies Testing (three cell
+                    panel) is conducted by fully automated advance technology. To ensure effective utilization of blood,
+                    besides supplying whole blood, Red Cross also has the facility of component separation that provides
+                    different components of blood, like fresh frozen plasma, platelet rich plasma, platelet concentrate,
+                    packed cells, cryoprecipitate and platelet aphaeresis.
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <center>
+        <h1 class="intro">NUMBERS SAVE</h1>
+    </center>
+    <br>
+    <div class="container3">
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">If donor donates 2-4 times a year,there will be no blood shortage.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">38,000 units of blood are used every day.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Every 3 seconds, someone needs blood.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">1 teaspoon of blood can save a babies life</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">You have zero% cahnce of getting the AIDS or HIV or other diseases from others</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">14000000 red cell transfusions are performed for each year in united states.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">37% of the us population can donate the blood,but only 5% does.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">17% of the healthy people dont donate because they are not thinking about it.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">15% of the non-donors say that they are too busy to donate.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">You can donate your blood every 54 days,platelets every 7 days and plasma every 28 days.</h2>
+        <h2 class="list" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">The average adult has 10-11pints of blood in their body</h2>
+
+    </div>
+</body>
+
+</html>

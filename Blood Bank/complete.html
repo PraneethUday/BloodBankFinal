@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Donate Blood</title>
+</head>
+<link rel="stylesheet" href="css_script/style.css">
+<link rel="stylesheet" href="css_script/navbar.css">
+
+<style>
+    p{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    div{
+        margin-top: 400px;
+    }
+
+</style>
+
+<body>
+    <div>
+    <h1 style="font-family: HeadingFont;text-align: center;">
+        <p> little effort can give others second chance to live life!</p>
+        <p>Your contribution is invaluable</p>
+        <p>Thank You !</p>
+
+        <h1 id="displayNumber"></h1>
+
+    </h1>
+</div>
+
+<script src="Backend.js">
+    window.addEventListener('load', function() {
+    
+    var queryString = window.location.search;
+    
+   
+    var urlParams = new URLSearchParams(queryString);
+    var randomNumber = urlParams.get('randomNumber');
+    
+    
+    document.getElementById('displayNumber').textContent = randomNumber;
+});
+</script>
+
+</body>

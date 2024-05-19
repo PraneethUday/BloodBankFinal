@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood</title>
+    <style>
+        @font-face {
+            font-family: 'Moderna';
+            src: url('css_script/static/MODERNA_.TTF');
+        }
+
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            margin-top: 10px;
+            width: 95%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"], input[type="email"], input[type="tel"], .names {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            margin-right: 10px;
+            font-weight: normal;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            background-color: #e74c3c;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-top: 20px;">
+        <h1 style="font-family: Moderna;">Donate Blood</h1>
+        <form action="complete.html" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="bloodgroup">BLOOD GROUP:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="a+" name="bloodgroup" value="a+" required>
+                        <label for="a+">A+</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="a-" name="bloodgroup" value="a-">
+                        <label for="a-">A-</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="b+" name="bloodgroup" value="b+">
+                        <label for="b+">B+</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="b-" name="bloodgroup" value="b-">
+                        <label for="b-">B-</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="o+" name="bloodgroup" value="o+">
+                        <label for="o+">O+</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="o-" name="bloodgroup" value="o-">
+                        <label for="o-">O-</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ab+" name="bloodgroup" value="ab+">
+                        <label for="ab+">AB+</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ab-" name="bloodgroup" value="ab-">
+                        <label for="ab-">AB-</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="name">FIRST NAME:</label>
+                <input type="text" class="names" name="name" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">LAST NAME:</label>
+                <input type="text" class="names" name="lastname" id="lastname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">DOB:</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label>GENDER:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">MALE</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">FEMALE</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phonenumber">PHONE NUMBER:</label>
+                <input type="tel" class="names" name="phonenumber" id="phonenumber" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailid">EMAIL:</label>
+                <input type="email" name="emailid" id="emailid" required>
+            </div>
+
+            <div class="form-group">
+                <label>HAVE YOU EVER DONATED BLOOD BEFORE?</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="yes" name="yesno" value="yes" required>
+                        <label for="yes">YES</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no" name="yesno" value="no">
+                        <label for="no">NO</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>IN THE LAST 6 MONTHS HAVE YOU HAD ANY OF THESE?</label>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" name="activities" id="tattooing">
+                        <label for="tattooing">TATTOOING</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="activities" id="earpiercing">
+                        <label for="earpiercing">EAR PIERCING</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="activities" id="dentalext">
+                        <label for="dentalext">DENTAL EXTRACTION</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="submit" class="btn" value="Submit" id="submit" onclick=generate()>
+                <input type="reset" name="reset" class="btn" value="Reset">
+            </div>
+        </form>
+    </div>
+    <script src="Backend.js">
+        function validateForm() {
+            const phone = document.getElementById('phonenumber').value;
+            if (!/^[0-9]{10}$/.test(phone)) {
+                alert('Phone number must be 10 digits.');
+                return false;
+            }
+            return true;
+        }
+
+    document.getElementById('submit').addEventListener('click', function(event) {
+    // Prevent the form from submitting immediately
+    event.preventDefault();
+    
+    // Generate a random number between 1 and 100
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    
+    // Set the value of the hidden input field to the random number
+    document.getElementById('randomNumber').value = randomNumber;
+    
+    // Submit the form
+    document.getElementById('randomForm').submit();
+});
+    </script>
+</body>
+</html>
+ 

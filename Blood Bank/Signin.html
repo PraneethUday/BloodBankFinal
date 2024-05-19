@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #23242a;
+            background: #1c1c1c;
+        }
+
+        .box {
+            position: relative;
+            width: 380px;
+            height: 420px;
+            background: #1c1c1c;
+            border-radius: 8px;
+            padding-left: 20px;
+            overflow: hidden;
+        }
+
+        .borderLine {
+            position: absolute;
+            top: 0;
+            inset: 0;
+        }
+
+        .borderLine::before {
+            content: '';
+            position: absolute;
+            animation: animate 6s linear infinite;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+            z-index: 1;
+            animation-delay: -1.5s;
+        }
+
+        .borderLine::after {
+            content: '';
+            position: absolute;
+            animation: animate 6s linear infinite;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+            z-index: 1;
+            animation-delay: -4.5s;
+        }
+
+        .box form {
+            position: absolute;
+            inset: 4px;
+            background: #222;
+            padding: 50px 40px;
+            border-radius: 8px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box form h1 {
+            color: #fff;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        .box form .inputbox {
+            position: relative;
+            width: 300px;
+            margin-top: 35px;
+        }
+
+        .box form .inputbox input {
+            position: relative;
+            width: 100%;
+            padding: 20px 10px 10px;
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+            color: black;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            border: none;
+            z-index: 10;
+        }
+
+        .box form .inputbox span {
+            position: absolute;
+            left: 0;
+            padding: 20px 10px 10px;
+            color: #8f8f8f;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .box form .inputbox input:valid~span,
+        .box form .inputbox input:focus~span {
+            color: #fff;
+            font-size: 0.75em;
+            transform: translateY(-34px);
+        }
+
+        .box form .inputbox i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .box form .inputbox input:valid~i,
+        .box form .inputbox input:focus~i {
+            height: 44px;
+        }
+
+        .box form .links a {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            color: #8f8f8f;
+            text-decoration: none;
+        }
+
+        .box form .links a:hover,
+        .box form .links a:nth-child(2) {
+            color: #fff;
+        }
+
+        .box form .submit button {
+            border: none;
+            outline: none;
+            padding: 9px 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            border-radius: 4px;
+            font-weight: 600;
+            width: 100px;
+            margin-top: 10px;
+            background: white;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            animation: animate 6s linear infinite;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+            z-index: 1;
+        }
+
+        .box::after {
+            content: '';
+            position: absolute;
+            animation: animate 6s linear infinite;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+            z-index: 1;
+            animation-delay: -3s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="borderLine"></span>
+        <form id="loginForm">
+            <h1>Sign In</h1>
+
+            <div class="inputbox">
+                <input type="email" required>
+                <span>Gmail ID</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" required>
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="#" id="forgetPassword">Forget Password</a>
+            </div>
+            <div class="submit">
+                <button type="submit">Sign In</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('forgetPassword').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'https://mail.google.com';
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            const password = e.target.querySelector('input[type="password"]').value;
+
+            if (validateForm(email, password)) {
+                const submitButton = e.target.querySelector('button[type="submit"]');
+                submitButton.textContent = 'Loading...';
+                setTimeout(() => {
+                    window.location.href = 'main.html';
+                }, 2000);
+            }
+        });
+
+        function validateForm(email, password) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            const isValidEmail = emailPattern.test(email);
+            const isValidPassword = isStrongPassword(password);
+
+            if (!isValidEmail) {
+                alert('Please enter a valid Gmail ID.');
+                return false;
+            }
+            if (!isValidPassword) {
+                alert('Password must be at least 8 characters long and include uppercase and lowercase letters, numbers, and special characters.');
+                return false;
+            }
+            return true;
+        }
+
+        function isStrongPassword(password) {
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return passwordPattern.test(password);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+@keyframes SlideInLeft {
+    0%{
+        transform: translateX(-300px);
+    }
+    40% {
+        transform: translateX(300px);
+    }
+    80%{
+        transform: translateX(-300px);
+    }
+    100%{
+        transform: translateX(0);
+    } 
+}
+.intro{
+    animation-name: SlideInLeft;
+    animation-duration: 30s;
+    color: rgb(103, 9, 9);
+}
+.album{
+    transition: all 0.3s;
+}
+.album:hover{
+    transform: translateY(-10px);
+    opacity: 80%;
+}
