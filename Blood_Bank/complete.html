@@ -29,18 +29,4 @@
     </h1>
 </div>
 
-<script src="Backend.js">
-    window.addEventListener('load', function() {
-    
-    var queryString = window.location.search;
-    
-   
-    var urlParams = new URLSearchParams(queryString);
-    var randomNumber = urlParams.get('randomNumber');
-    
-    
-    document.getElementById('displayNumber').textContent = randomNumber;
-});
-</script>
-
 </body>

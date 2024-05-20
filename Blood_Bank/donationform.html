@@ -200,13 +200,27 @@
                 </div>
             </div>
 
+            <div>
+                <button type="button" class="btn" style="background-color: green;" id="Generate">Generate ID For Donation</button>
+                <div style="display: flex;flex-direction: row;">
+                    <style>
+                        .l{
+                            padding-left: 10px;
+                            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                            font-size: 20px;
+                        }
+                    </style>
+                    <label class="l" for="btn"> ID for Donation : </label>
+                    <label class="l" for="btn" id="dis" style="color: green;"></label>
+                </div>
+            </div>
             <div class="form-group">
-                <input type="submit" name="submit" class="btn" value="Submit" id="submit" onclick=generate()>
+                <input type="submit" name="submit" class="btn" value="Submit" id="submit">
                 <input type="reset" name="reset" class="btn" value="Reset">
             </div>
         </form>
     </div>
-    <script src="Backend.js">
+    <script>
         function validateForm() {
             const phone = document.getElementById('phonenumber').value;
             if (!/^[0-9]{10}$/.test(phone)) {
@@ -216,20 +230,14 @@
             return true;
         }
 
-    document.getElementById('submit').addEventListener('click', function(event) {
-    // Prevent the form from submitting immediately
-    event.preventDefault();
-    
-    // Generate a random number between 1 and 100
-    var randomNumber = Math.floor(Math.random() * 100) + 1;
-    
-    // Set the value of the hidden input field to the random number
-    document.getElementById('randomNumber').value = randomNumber;
-    
-    // Submit the form
-    document.getElementById('randomForm').submit();
-});
+        document.getElementById("Generate").addEventListener('click', function() {
+            let x = Math.floor(100000 * (Math.random() * 6));
+            let id = "AC" + x;
+            console.log(id);
+
+            document.getElementById("dis").textContent = id;
+            this.disabled = true;
+        });
     </script>
 </body>
 </html>
- 

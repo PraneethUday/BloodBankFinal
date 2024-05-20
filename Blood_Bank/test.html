@@ -1,250 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Bank</title>
-
+    <title>Blinking Green Circle</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 0;
-            padding: 0;
+        /* Style for the circle */
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 50%;
+            /* Center the circle */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Animation for blinking */
+            animation: blink 1s infinite;
         }
 
-        header {
-            background-color: #b30000;
-            padding: 10px 0;
-            text-align: center;
-            color: white;
-        }
-
-        header a.nav {
-            text-decoration: none;
-            color: white;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        .btn_nav {
-            background-color: white;
-            color: #b30000;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn_nav:hover {
-            background-color: #e6e6e6;
-        }
-
-        .container1 {
-            text-align: center;
-            background-color: #b30000;
-            color: white;
-            padding: 40px 20px;
-        }
-
-        .container2 {
-            background-color: #ffcccc;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-        }
-
-        .btn1 {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .btn11 {
-            background-color: #b30000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn11:hover {
-            background-color: #990000;
-        }
-
-        h1, h2 {
-            color: #b30000;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        table {
-            width: 100%;
-            text-align: center;
-            background-color: #ffe6e6;
-            border-collapse: collapse;
-            margin: 20px 0;
-            border: 2px solid #b30000;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        table th, table td {
-            padding: 10px;
-            border: 1px solid #b30000;
-        }
-
-        .albumContainer {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .album {
-            border-radius: 10px;
-            border: 2px solid #b30000;
-        }
-
-        .btn {
-            background-color: #b30000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #990000;
-        }
-
-        .list {
-            font-weight: bold;
+        /* Keyframes for blinking effect */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="#" class="nav"><h1>Blood Bank</h1></a>
-        <nav>
-            <ul class="nav_link">
-                <li><a href="Main.html" class="nav">Home</a></li>
-                <li><a href="About.html" class="nav">About</a></li>
-                <li><a href="contact.html" class="nav">Contact</a></li>
-                <li><a href="#" class="nav">Information</a></li>
-                <li><a href="bloo/BB/imagegallery2.html" class="nav">Photo Gallery</a></li>
-                <li><a href="bloo/BB/LOGIN2.html"><button class="btn_nav" style="padding-right: 15px;">LOGIN</button></a></li>
-                <li><a href="bloo/BB/SIGNIN2.html"><button class="btn_nav">SIGN IN</button></a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="container1">
-        <h2 class="intro">Drop by Drop You Can Make a Difference</h2>
-        <h2 class="intro">Be a lifesaver, donate blood!</h2>
-    </div>
-
-    <br>
-
-    <div class="container">
-        <div class="btn1">
-            <a href="Blood_units.html">
-                <button class="btn11">List of Available Blood Units</button>
-            </a>
-        </div>
-        <div class="btn1">
-            <a href="blood_centres.html">
-                <button class="btn11">List of Available Blood Centres</button>
-            </a>
-        </div>
-    </div>
-
-    <br>
-
-    <div class="container2">
-        <br>
-        <div>
-            <h1>Five Reasons to Donate Blood</h1>
-            <div>
-                <h2 class="list">1. Development of new red blood cells</h2>
-                <p>Within the first 48 hours of blood donation, the donor's body starts replenishing the lost red blood cells. The replenishment process helps in staying healthy and productive at work. Blood donation is safe for healthy adults. There’s no risk of contracting disease. New, sterile equipment is used for each donor.</p>
-                <h2 class="list">2. Reducing risk of heart disease</h2>
-                <p>As per several studies and reports, when there is a rise in the iron level in blood, it raises the chances of heart diseases. People should donate blood from time to time in order to reduce the iron level in the blood.</p>
-                <h2 class="list">3. Burns calories</h2>
-                <p>Donating blood can burn approximately 650 calories for each pint that is like 450 ml of blood.</p>
-                <h2 class="list">4. Free blood test</h2>
-                <p>On donating blood, the donor receives a free mini health screening and blood tests.</p>
-                <h2 class="list">5. How often can one donate blood?</h2>
-                <p>The minimum time advised between two donations is 3 months. This gap helps blood regain the normal haemoglobin count.</p>
-                <h3 class="list">Who can donate blood</h3>
-                <p>The age of the donor must be above 18 years and below 65 years of age. He/she must have a haemoglobin count that is not less than 12.5 g/dl. The weight should not be less than 45 kgs. One should have a normal body temperature at the time of donation.</p>
-            </div>
-        </div>
-
-        <table>
-            <tr>
-                <th>Blood Type</th>
-                <th>Donate Blood To</th>
-                <th>Receive Blood From</th>
-            </tr>
-            <tr>
-                <td>A+</td>
-                <td>A+, AB+</td>
-                <td>A+, A-, O+, O-</td>
-            </tr>
-            <tr>
-                <td>O+</td>
-                <td>O+, A+, B+, AB+</td>
-                <td>O+, O-</td>
-            </tr>
-            <tr>
-                <td>B+</td>
-                <td>B+, AB+</td>
-                <td>B+, B-, O+, O-</td>
-            </tr>
-            <tr>
-                <td>AB+</td>
-                <td>AB+</td>
-                <td>Everyone</td>
-            </tr>
-            <tr>
-                <td>A-</td>
-                <td>A+, A-, AB+, AB-</td>
-                <td>A-, O-</td>
-            </tr>
-            <tr>
-                <td>O-</td>
-                <td>Everyone</td>
-                <td>O-</td>
-            </tr>
-            <tr>
-                <td>B-</td>
-                <td>B+, B-, AB+, AB-</td>
-                <td
+    <div class="circle"></div>
+</body>
+</html>
