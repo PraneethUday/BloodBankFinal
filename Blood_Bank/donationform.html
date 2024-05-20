@@ -85,6 +85,24 @@
         .form-group {
             margin-bottom: 20px;
         }
+
+        .copy-btn {
+            margin-left: 10px;
+            background-color: #3498db;
+        }
+
+        .copy-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .id-display {
+            width: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -202,20 +220,15 @@
 
             <div>
                 <button type="button" class="btn" style="background-color: green;" id="Generate">Generate ID For Donation</button>
-                <div style="display: flex;flex-direction: row;">
-                    <style>
-                        .l{
-                            padding-left: 10px;
-                            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                            font-size: 20px;
-                        }
-                    </style>
-                    <label class="l" for="btn"> ID for Donation : </label>
-                    <label class="l" for="btn" id="dis" style="color: green;"></label>
+                <div style="display: flex; align-items: center; margin-top: 10px;">
+                    <label class="l" for="btn">ID for Donation:</label>
+                    <input type="text" id="dis" class="id-display" readonly>
+                    <button type="button" class="btn copy-btn" id="copyBtn">Copy</button>
                 </div>
             </div>
+
             <div class="form-group">
-                <input type="submit" name="submit" class="btn" value="Submit" id="submit">
+                <input type="submit" name="submit" class="btn" value="Submit" id="submit" disabled>
                 <input type="reset" name="reset" class="btn" value="Reset">
             </div>
         </form>
@@ -223,20 +236,55 @@
     <script>
         function validateForm() {
             const phone = document.getElementById('phonenumber').value;
+            const dob = document.getElementById('dob').value;
+            const bloodgroup = document.querySelector('input[name="bloodgroup"]:checked');
+
+            // Check if a blood group is selected
+            if (!bloodgroup) {
+                alert('Please select a blood group.');
+                return false;
+            }
+
+            // Check phone number
             if (!/^[0-9]{10}$/.test(phone)) {
                 alert('Phone number must be 10 digits.');
                 return false;
             }
+
+            // Check date of birth
+            const today = new Date();
+            const birthDate = new Date(dob);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDifference = today.getMonth() - birthDate.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 19) {
+                alert('You must be at least 19 years old to donate blood.');
+                return false;
+            }
+
             return true;
         }
 
         document.getElementById("Generate").addEventListener('click', function() {
+            if (!validateForm()) {
+                return;
+            }
             let x = Math.floor(100000 * (Math.random() * 6));
             let id = "AC" + x;
             console.log(id);
-
-            document.getElementById("dis").textContent = id;
+            document.getElementById("dis").value = id;
             this.disabled = true;
+            document.getElementById("submit").disabled = false;
+        });
+
+        document.getElementById("copyBtn").addEventListener('click', function() {
+            const copyText = document.getElementById("dis");
+            copyText.select();
+            document.execCommand("copy");
+            alert("ID copied to clipboard: " + copyText.value);
         });
     </script>
 </body>
