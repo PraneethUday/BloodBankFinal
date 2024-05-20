@@ -43,7 +43,6 @@
             padding: 10px 20px;
             cursor: pointer;
             margin-top: 20px;
-        
         }
     </style>
 </head>
@@ -52,7 +51,7 @@
         <div class="content">
             <h1>REQUEST FOR ORGANIZING DONATION CAMP</h1>
             <p>For further queries call us at +91 84381 17425</p>
-            <form action="#" method="POST">
+            <form action="#" method="POST" onsubmit="return validateForm()">
                 <label for="organization">Name of Organization/Camp *</label>
                 <input type="text" id="organization" name="organization" required>
                 
@@ -94,5 +93,46 @@
             </form>
         </div>
     </div>
+    <script>
+        function validateForm() {
+            const organization = document.getElementById('organization').value.trim();
+            const date = document.getElementById('date').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const state = document.getElementById('state').value.trim();
+            const zip = document.getElementById('zip').value.trim();
+            const donors = document.getElementById('donors').value.trim();
+            const arrangement = document.querySelector('input[name="arrangement"]:checked');
+            const name = document.getElementById('name').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (organization === "" || date === "" || address === "" || city === "" || state === "" || zip === "" || donors === "" || !arrangement || name === "" || contact === "" || email === "") {
+                alert("All fields marked with * are required.");
+                return false;
+            }
+
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(contact)) {
+                alert("Contact number must be 10 digits.");
+                return false;
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            const dateInput = new Date(date);
+            const today = new Date();
+            if (dateInput < today) {
+                alert("The camp date must be in the future.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

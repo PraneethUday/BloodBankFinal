@@ -238,20 +238,43 @@
             const phone = document.getElementById('phonenumber').value;
             const dob = document.getElementById('dob').value;
             const bloodgroup = document.querySelector('input[name="bloodgroup"]:checked');
+            const firstname = document.getElementById('name').value;
+            const lastname = document.getElementById('lastname').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const donatedBefore = document.querySelector('input[name="yesno"]:checked');
+            const activities = document.querySelectorAll('input[name="activities"]:checked');
 
-            // Check if a blood group is selected
+            
             if (!bloodgroup) {
                 alert('Please select a blood group.');
                 return false;
             }
 
-            // Check phone number
+        
+            if (firstname.trim() === "") {
+                alert('First name is required.');
+                return false;
+            }
+
+        
+            if (lastname.trim() === "") {
+                alert('Last name is required.');
+                return false;
+            }
+
+            
+            if (!gender) {
+                alert('Please select a gender.');
+                return false;
+            }
+
+        
             if (!/^[0-9]{10}$/.test(phone)) {
                 alert('Phone number must be 10 digits.');
                 return false;
             }
 
-            // Check date of birth
+            
             const today = new Date();
             const birthDate = new Date(dob);
             let age = today.getFullYear() - birthDate.getFullYear();
@@ -262,6 +285,18 @@
 
             if (age < 19) {
                 alert('You must be at least 19 years old to donate blood.');
+                return false;
+            }
+
+        
+            if (!donatedBefore) {
+                alert('Please answer if you have donated blood before.');
+                return false;
+            }
+
+        
+            if (activities.length !== 0) {
+                alert('you cant donate blood');
                 return false;
             }
 
