@@ -203,6 +203,10 @@
         </form>
     </div>
     <script>
+        document.getElementById('forgetPassword').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'https://mail.google.com';
+        });
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
             const password = document.getElementById('password').value;
