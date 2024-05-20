@@ -27,13 +27,35 @@
     font-size: 30px;
     color: rgb(97, 173, 97);
   }
+  
 </style>
 
+<style>
+  
+  .circle {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(17, 224, 17);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: blink 1.25s infinite;
+      left: 480px;
+      top: 336px;
+  }
 
+  @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+  }
+</style>
 
 <h1>
     list of Avaibale Blood Units in Stock
 </h1>
+<div class="circle"></div>
 <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
     Indian Red Cross Society, National Headquarters,New Delhi
 </h2>
